@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>程式基礎練習 - 入門索引</title>
+    <!-- 引入高品質字體 -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --glass-bg: rgba(255, 255, 255, 0.12);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --hover-bg: rgba(255, 255, 255, 0.25);
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background: var(--primary-gradient);
+            background-attachment: fixed;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* 增加裝飾性背景圓圈，提升藝術感 */
+        body::before, body::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            z-index: -1;
+        }
+        body::before { width: 300px; height: 300px; top: 10%; left: 10%; }
+        body::after { width: 200px; height: 200px; bottom: 10%; right: 15%; }
+
+        .container {
+            background: var(--glass-bg);
+            padding: 50px 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            max-width: 500px;
+            width: 90%;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2em;
+            letter-spacing: 2px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        /* 標題裝飾下劃線 */
+        h1::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: #fff;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 18px;
+            /* 讓選單逐一浮現的動畫 */
+            opacity: 0;
+            animation: slideUp 0.5s forwards;
+        }
+        li:nth-child(1) { animation-delay: 0.1s; }
+        li:nth-child(2) { animation-delay: 0.2s; }
+        li:nth-child(3) { animation-delay: 0.3s; }
+        li:nth-child(4) { animation-delay: 0.4s; }
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 25px;
+            background: var(--glass-bg);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.1em;
+        }
+
+        /* 增加小箭頭圖示感 */
+        a::after {
+            content: "→";
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background: var(--hover-bg);
+            border: 1px solid var(--glass-border);
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        a:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* 動畫效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>程式基礎練習</h1>
+        <ul>
+            <li><a href="01_string.php"><span>01. 字串處理</span></a></li>
+            <li><a href="02_datetime.php"><span>02. 日期與時間</span></a></li>
+            <li><a href="03_calendar.php"><span>03. 互動式月曆</span></a></li>
+            <li><a href="04_BMI.php"><span>04. BMI 計算器</span></a></li>
+            <li><a href="05_logincheck.php"><span>05. 登入檢查</span></a></li>
+        </ul>
+    </div>
+</body>
+</html>
