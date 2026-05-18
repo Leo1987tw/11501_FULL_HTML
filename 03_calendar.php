@@ -91,7 +91,7 @@
 <body>
 
     <div style="width: 100%; max-width: 850px;">
-        <a href="index.html" class="back-btn">← 返回首頁</a>
+        <a href="./index.html" class="back-btn">← 返回前頁</a>
     </div>
 
     <div class="container">

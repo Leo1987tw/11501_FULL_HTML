@@ -152,7 +152,7 @@
 <body>
 
     <div class="nav-header">
-        <a href="index.html" class="back-btn">← 返回首頁</a>
+        <a href="./index.html" class="back-btn">← 返回前頁</a>
     </div>
 
     <div class="container">

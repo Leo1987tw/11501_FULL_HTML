@@ -55,6 +55,28 @@
             animation: fadeIn 0.8s ease-out;
         }
 
+        .back-nav {
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-5px);
+        }
+        
         h1 {
             text-align: center;
             margin-bottom: 40px;
@@ -137,14 +159,23 @@
     </style>
 </head>
 <body>
+    
     <div class="container">
+
+        <div class="back-nav">
+            <a href="../../index.html" class="back-btn">← 返回首頁</a>
+        </div>
+
         <h1>程式基礎練習</h1>
         <ul>
-            <li><a href="01_string.php"><span>01. 字串處理</span></a></li>
-            <li><a href="02_datetime.php"><span>02. 日期與時間</span></a></li>
-            <li><a href="03_calendar.php"><span>03. 互動式月曆</span></a></li>
-            <li><a href="04_BMI.php"><span>04. BMI 計算器</span></a></li>
-            <li><a href="05_logincheck.php"><span>05. 登入檢查</span></a></li>
+            <li><a href="./01_string.php"><span>01. 字串處理</span></a></li>
+            <li><a href="./02_datetime.php"><span>02. 日期與時間</span></a></li>
+            <li><a href="./03_calendar.php"><span>03. 互動式月曆</span></a></li>
+            <li><a href="./04_BMI.php"><span>04. BMI 計算器</span></a></li>
+            <li><a href="./05_logincheck.php"><span>05. 登入檢查</span></a></li>
+            <li><a href="./06_logincookie.php"><span>06. 登入檢查cookie</span></a></li>
+            <li><a href="./07_loginsession.php"><span>07. 登入檢查session</span></a></li>
+            <li><a href="./08_include.php"><span>08. 檔案拆分</span></a></li>
         </ul>
     </div>
 </body>
