@@ -1,0 +1,139 @@
+/* Unified stylesheet based on index.html and common page styles
+   Location: style.css (root of 11501_FULL_HTML)
+   Purpose: provide a single, consistent dark glass theme for pages.
+*/
+:root{
+  --primary-gradient: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+  --glass-bg: rgba(255,255,255,0.12);
+  --glass-border: rgba(255,255,255,0.2);
+  --hover-bg: rgba(255,255,255,0.25);
+  --accent: #ffd700;
+  --muted-text: rgba(255,255,255,0.9);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;
+  background:var(--primary-gradient);
+  background-attachment:fixed;color:#fff;line-height:1.6;
+  -webkit-font-smoothing:antialiased; padding:40px 20px;
+}
+
+/* page container / cards */
+.container{
+  background:var(--glass-bg);
+  padding:50px 40px;border-radius:24px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.2);
+  backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);
+  border:1px solid var(--glass-border);max-width:900px;width:100%;margin:0 auto;
+}
+
+/* back button */
+.back-nav,.nav-header{width:100%;max-width:900px;margin:0 auto 20px}
+.back-btn{display:inline-block;padding:10px 25px;border-radius:50px;background:rgba(255,255,255,0.1);color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,0.18);transition:all .25s}
+.back-btn:hover{background:var(--hover-bg);transform:translateX(-5px)}
+
+/* headings */
+h1,h2,h3{color:var(--accent)}
+h1{text-align:center;margin-bottom:20px;font-size:2.2rem}
+h2{border-left:5px solid var(--accent);padding-left:14px;margin-top:24px}
+
+/* lists / text */
+p,ul{color:var(--muted-text)}
+ul{list-style:none}
+li{margin-bottom:10px}
+
+/* output / cards */
+.output-section,.output-box,form,.result-card{background:rgba(255,255,255,0.05);padding:20px;border-radius:12px;margin:12px 0;border:1px solid rgba(255,255,255,0.04)}
+pre{background:rgba(0,0,0,0.25);padding:12px;border-radius:8px;color:#a5d6ff;overflow:auto}
+
+/* forms */
+form{display:flex;flex-wrap:wrap;gap:10px}
+input[type="text"],input[type="password"],input[type="number"],input[type="month"]{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;outline:none}
+input:focus{box-shadow:0 0 8px rgba(255,215,0,0.12);border-color:var(--accent)}
+input[type="submit"]{padding:12px 18px;border-radius:10px;border:none;background:var(--accent);color:#222;font-weight:700;cursor:pointer}
+input[type="submit"]:hover{background:#fff;transform:translateY(-2px)}
+
+/* bmi */
+.result-card{text-align:center}
+.bmi-value{font-size:2rem;color:#00d2ff;font-weight:700;display:block;margin:10px 0}
+.bmi-msg{display:inline-block;padding:6px 12px;border-radius:6px;background:var(--accent);color:#222}
+
+/* calendar / table */
+table{width:100%;border-collapse:separate;border-spacing:6px}
+td{background:rgba(255,255,255,0.08);width:50px;height:50px;text-align:center;border-radius:8px;border:1px solid rgba(255,255,255,0.04)}
+tr:first-child td{background:rgba(0,0,0,0.2);color:var(--accent);font-weight:700}
+td:hover:not(:empty){background:var(--accent);color:#333;transform:scale(1.06)}
+.flex-calendar{margin-top:12px}
+.tr{display:flex;justify-content:center;gap:6px}
+.nav-links a{padding:8px 12px;background:rgba(255,255,255,0.08);color:#fff;text-decoration:none;border-radius:6px}
+.nav-links a:hover{background:var(--accent);color:#222}
+
+/* Utility and replacements for extracted inline styles */
+.page-row{width:100%;max-width:600px;display:flex;margin:0 auto 18px;align-items:center}
+.page-row--wide{width:100%;max-width:850px;margin:0 auto 18px;align-items:center}
+.tr--header{font-weight:700;color:var(--accent)}
+.nav-links{margin-bottom:20px}
+.text-center{ text-align:center }
+.muted{ color:#666 }
+.mb-20{ margin-bottom:20px }
+.error-title{ margin:0; color:#ff6b6b }
+.error-desc{ opacity:0.8; margin-top:10px }
+
+/* success / error boxes */
+.icon-box,.error-icon{width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.icon-box{background:rgba(255,215,0,0.12);border:2px solid var(--accent);color:var(--accent);font-size:30px}
+.error-icon{background:rgba(231,76,60,0.12);border:2px solid #e74c3c;color:#e74c3c;font-size:30px}
+
+.btn-group{display:flex;gap:12px}
+.btn{padding:12px 18px;border-radius:12px;text-decoration:none;display:inline-block;font-weight:700}
+.btn-logout{background:var(--accent);color:#222}
+.btn-back{background:rgba(255,255,255,0.06);color:#fff;border:1px solid rgba(255,255,255,0.08)}
+
+.retry-btn,.back-link{display:inline-block;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+.retry-btn{background:#ff6b6b;color:#fff}
+.retry-btn:hover{background:#fff;color:#ff6b6b}
+
+/* helpers */
+.highlight{color:var(--accent);font-weight:700}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:600px){.container{padding:20px;border-radius:16px}h1{font-size:1.6rem}input[type="number"]{min-width:120px}}
+
+/* Index-specific decorative and interactive styles */
+body::before, body::after{
+  content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,0.05);z-index:-1;
+}
+body::before{width:300px;height:300px;top:10%;left:10%}
+body::after{width:200px;height:200px;bottom:10%;right:15%}
+
+/* index container narrower when it contains an H1 (uses CSS :has) */
+.container:has(h1){max-width:500px;width:90%;padding:50px 40px;animation:fadeIn .8s ease-out}
+
+/* link arrow and list animations used on index */
+a::after{content:"→";opacity:0;transform:translateX(-10px);transition:all .3s ease}
+a:hover::after{opacity:1;transform:translateX(0)}
+li{opacity:0;animation:slideUp .5s forwards}
+li:nth-child(1){animation-delay:.1s}
+li:nth-child(2){animation-delay:.2s}
+li:nth-child(3){animation-delay:.3s}
+li:nth-child(4){animation-delay:.4s}
+li:nth-child(5){animation-delay:.5s}
+li:nth-child(6){animation-delay:.6s}
+li:nth-child(7){animation-delay:.7s}
+li:nth-child(8){animation-delay:.8s}
+
+/* Index / menu link base styles (restore original index look) */
+.container a {
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 25px;background:var(--glass-bg);color:#fff;text-decoration:none;
+  border-radius:12px;border:1px solid transparent;transition:all .4s cubic-bezier(0.175,0.885,0.32,1.275);
+  font-size:1.1rem;
+}
+.container a:hover{
+  background:var(--hover-bg);border:1px solid var(--glass-border);transform:scale(1.03);
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}

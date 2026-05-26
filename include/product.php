@@ -117,7 +117,7 @@
             </tbody>
         </table>
         
-        <p style="text-align: center; color: #666; margin-bottom: 20px;">
+            <p class="text-center muted mb-20">
             * 以上報價為參考價格，具體方案請聯繫我們的銷售部門進行洽詢
         </p>
     </main>
